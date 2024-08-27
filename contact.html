@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTER NIAGARA FC | CONTACT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+Display:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ibarra+Real+Nova:wght@400..700&family=Noto+Serif+Display:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ibarra+Real+Nova:wght@400..700&family=Josefin+Sans:wght@100..700&family=Noto+Serif+Display:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Images/HomePage/Logo.png" alt="logo" width="400px" height="150px">
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar" >
+            <ul>
+                <li>
+                 <a href="index.html" class="option">HOME</a>
+                </li> 
+                <li>
+                 <a href="games.html" class="option">OUR TEAM</a>
+                </li> 
+                <li>
+                 <a href="gallery.html" class="option">GALLERY</a>
+                </li> 
+                <li>
+                 <a href="about.html" class="option">ABOUT US</a>
+                </li> 
+                <li>
+                 <a href="contact.html" class="option">CONTACT</a>
+                </li> 
+             </ul>
+
+        </nav>
+    </header>
+    <!--content -->
+    <div id="wrapper">
+        <main>  
+            <article>
+                <h2>Get in Touch with Inter Niagara FC</h2>
+                <p>We’re here to help! Whether you have questions, want to join the club, or need more information about our events, feel free to reach out to us.</p>
+            </article>
+            <form  action="https://webdevbasics.net/scripts/demo.php" method="post">
+                <fieldset>
+                <legend>Information</legend>
+                <div class="form">
+                <div>
+                <label for="fName">Full Name</label>
+                <input type="text" name="fName" id="fName" placeholder="Full name" required>
+                </div>
+                <div>
+                <label for="lName">Phone</label>
+                <input type="text" name="lName" id="phone" placeholder="123 456 7890" >
+                </div>
+                <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="interniagara@gmail.com" required>
+                </div>
+                <div>           
+                <label for="message">Message</label>           
+                <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+                </div> 
+                </div>
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
+    
+        </main>
+    </div>
+
+
+    <!--content -->
+    <footer><small>©Copyright INTER NIAGARA FC. All rights reserved</small><br><b>Unity Through Soccer</b></footer>
+    <script src="niagara.js"></script>
+</body>
+</html>
