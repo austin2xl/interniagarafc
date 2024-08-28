@@ -1,11 +1,13 @@
+
 document.addEventListener("DOMContentLoaded", function() {
     let hamburger = document.querySelector(".hamburger")
+    let header = document.querySelector('header')
     let navBar = document.querySelector(".nav-bar")
     let navLinks = document.querySelectorAll(".nav-bar ul li a.option")
 
     // Function to set the active class based on the current URL
     function setActiveLink() {
-        const currentPath = window.location.pathname;
+        const currentPath = window.location.pathname
         navLinks.forEach(link => {
             if (link.getAttribute('href') === currentPath.split('/').pop()) {
                 link.classList.add("active")
@@ -16,9 +18,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Toggle navigation bar on hamburger click
-    hamburger.onclick = function() {
+    hamburger.addEventListener('click', function() {
+        header.classList.toggle('active')
         navBar.classList.toggle("active")
-    }
+    })
+
 
     // Add click event listener to each navigation link
     navLinks.forEach(link => {
@@ -35,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Set the active link on page load
     setActiveLink()
 })
+//sliding effects for pictures
 document.addEventListener("DOMContentLoaded", function() {
     function initializeSlider(sliderClass, navButtonClass, nextButtonClass, prevButtonClass) {
         let currentSlide = 0;
@@ -75,4 +80,29 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initialize both sliders
     initializeSlider('.slide', '.nav-button', '.next-button', '.prev-button');
     initializeSlider('.slide-two', '.nav-button-two', '.next-button-two', '.prev-button-two');
+})
+document.addEventListener("DOMContentLoaded", function() {
+    let content = document.getElementById("wrapper");
+
+    // Fade in content when the page loads
+    window.onload = () => {
+        content.classList.add('active');
+    };
+
+    // Add event listeners to all links for fade-out effect
+    let links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();  // Prevent default link behavior
+            const href = this.href;
+
+            // Fade out the content
+            content.classList.remove('active');
+
+            // After the animation ends, redirect to the clicked link
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); // Match this duration to the CSS transition
+        });
+    });
 });

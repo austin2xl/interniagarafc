@@ -3,7 +3,7 @@
     display: block;
     cursor: pointer;
     margin-left: auto; /* Pushes the hamburger to the right */
-    padding-right: 20px;
+    
 }
 
 .hamburger .line {
@@ -11,41 +11,52 @@
     height: 3px;
     background: #0C018C;
     margin: 6px 0;
+    transition: 0.3s ease;
 }
 
 header {
     width: 100%;
     height: 100px;
-    background: #e2e9fa34;
+    background: linear-gradient(to top, #ffffff, #e2e9fa); /* White to light blue gradient */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px; /* Default padding for small screens */
+    padding: 0 20px;
     box-sizing: border-box;
-    position: relative;
-    z-index: 1;
+    position: fixed; /* Fix the header to the top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: 0.1s ease; /* Smooth background color transition */
 }
-
+header.active {
+    background: #0C018C; /* Blue background when active */
+}
+header.active .hamburger .line {
+    background: #ffffff; /* White lines when active */
+}
 .logo {
-    margin-right: auto; /* Pushes the logo to the left */
+    margin-right: auto;  /*Pushes the logo to the left */
     max-width: 60%; /* Adjust logo size on small screens */
+   
 }
 
 .nav-bar {
     height: 0;
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0;
     right: 0;
     width: 100%;
-    transition: 0.2s;
+    transition: 0.2s ease;
     background: #0C018C;
     overflow: hidden;
-    z-index: 0; /* Ensure the nav-bar is behind the header */
+    z-index: 999; /* Ensure the nav-bar stays below the header */
 }
 
 .nav-bar.active {
     height: 450px;
+    
 }
 
 .nav-bar ul {
@@ -70,6 +81,9 @@ header {
     border-radius: 50px;
     transition: 0.2s;
     margin-bottom: 12px;
+    white-space: nowrap; /* Prevent text from overflowing */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .nav-bar ul li a:hover,
@@ -97,13 +111,17 @@ header {
 /* Larger Screen Styles */
 @media screen and (min-width: 1024px) {
     header {
-        padding: 0 50px;
+        padding: 0 10px;
+        
     }
 
     .hamburger {
         display: none;
     }
 
+    .logo {
+        max-width: 50%; /* Reduce the logo width to free up space */
+    }
     .nav-bar {
         height: auto;
         position: static;
@@ -116,12 +134,36 @@ header {
     .nav-bar ul {
         display: flex;
         margin: 0;
+        padding: 0;
         text-align: left;
         opacity: 1;
+        white-space: nowrap; /* Ensure text doesn't wrap */
+    }
+    .nav-bar ul li {
+        margin: 0; /* Remove any unnecessary margins */
+        padding: 0 10px; /* Reduce padding between items */
+        list-style: none;
     }
 
     .nav-bar ul li a {
-        margin: 0 5px;
+        margin: 0;
         color: #0C018C;
+        font-size: 18px;
+        white-space: nowrap; /* Prevent text from wrapping */
+        padding: 8px 10px; /* Reduce padding inside links */
+    }
+}
+@media screen and (min-width: 1440px) {
+
+    header {
+        padding: 0 30px;
+        
+    }
+    .nav-bar ul li {
+        padding: 0 20px; /* Reduce padding between items */
+  
+    }
+    .nav-bar ul li a {
+        font-size: 20px;
     }
 }
