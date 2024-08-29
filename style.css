@@ -34,6 +34,7 @@ h1{
     color: #0C018C;
     font-family: "Noto Serif Display", serif;
     font-weight: 900;
+    z-index: 1;
     
 }
 h2{
@@ -59,6 +60,9 @@ footer{
 	text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+footer small{
+    font-size: 11px;
+}
 div img{
     padding-right: 250px;
 }
@@ -73,6 +77,38 @@ div img{
 #wrapper.active{
     opacity: 1;
     transform: translateY(0);
+}
+/* Hero Banner */
+#hero-banner {
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Adjust the height as needed */
+    width: 100%;
+    position: relative;
+    border-radius: 3px;
+}
+#hero-banner h1{
+    z-index: 1;
+    text-align: center;
+    padding-top: 60px;
+}
+.home-banner{
+    background-image: linear-gradient(to bottom, #ffffff8e, #0e1e42d8) ,url(Images/HomePage/HOME.jpg);   
+}
+.team-banner{
+    background-image: linear-gradient(to bottom, #ffffff8e, #0e1e42d8) ,url(Images/HomePage/Team.jpg);   
+}
+.about-banner{
+    background-image: linear-gradient(to bottom, #ffffff8e, #0e1e42d8) ,url(Images/HomePage/about.JPG);   
+}
+.contact-banner{
+    background-image: linear-gradient(to bottom, #ffffff8e, #0e1e42d8) ,url(Images/HomePage/Contact.jpg);   
+}
+.news-banner{
+    background-image: linear-gradient(to bottom, #ffffff8e, #0e1e42d8) ,url(Images/HomePage/News.jpg);   
+}
+.gallery-banner{
+    background-image: linear-gradient(to bottom, #ffffff8e, #0e1e42d8) ,url(Images/HomePage/Gallery.jpg);   
 }
 /*form*/
 .form{
@@ -223,6 +259,9 @@ label{
     .slider-container {
         height: auto;
         width: 80%;
+    }
+    footer small{
+        font-size: 13px;
     }
 }
 
