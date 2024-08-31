@@ -71,11 +71,15 @@
                 </section>
               
         </main>
-        
+           
     </div>
-   
-
-
+    <div class="cookies-card">
+        <p class="title">Cookies Consent</p>
+        <p class="info">By using this website, you automatically accept that we use cookies. <a href="#">Read more</a>
+        </p>
+        <button class="cta">Accept all</button>
+        <a href="#" class="settings">Cookies Settings</a>
+    </div>
 
     <!--content -->
     <footer><small>©Copyright INTER NIAGARA FC. All rights reserved<br><b>Unity Through Soccer<br><img src="Images/icons/email-icon.png" alt="email-icon" style="width:20px; vertical-align:middle; margin-right:5px; margin-bottom: 4px;">interniagara2@gmail.com | <a href="https://www.instagram.com" target="_blank">
@@ -85,5 +89,41 @@
         <img src="Images/icons/youtube-icon.png" alt="YouTube Icon" style="width:20px; vertical-align:middle; margin-left:5px; margin-bottom: 3px;">
     </a></small></footer> 
        <script src="niagara.js"></script>
+       <script>
+       // Set a cookie
+setCookie = (cName, cValue, expDays) => {
+    let date = new Date();
+    date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = cName + "=" + cValue + ";" + expires + ";path=/";
+}
+
+// Get a cookie
+getCookie = (cName) => {
+    const name = cName + "=";
+    const cDecoded = decodeURIComponent(document.cookie);
+    const cArr = cDecoded.split('; ');
+    let value;
+    cArr.forEach(val => {
+        if (val.indexOf(name) === 0) value = val.substring(name.length);
+    });
+    return value;
+}
+
+// Handling cookie consent
+document.querySelector(".cta").addEventListener("click", () => {
+    document.querySelector(".cookies-card").style.display = "none";
+    setCookie("cookie", true, 30);
+});
+
+cookieMessage = () => {
+    if (!getCookie("cookie")) {
+        document.querySelector(".cookies-card").style.display = "block";
+    }
+}
+
+window.addEventListener("load", cookieMessage);
+
+       </script>
 </body>
 </html>

@@ -48,6 +48,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const nextButton = document.querySelector(nextButtonClass);
         const prevButton = document.querySelector(prevButtonClass);
 
+        // Check if elements exist before proceeding
+        if (!slides.length || !navButtons.length || !nextButton || !prevButton) {
+            console.error('Slider initialization failed: missing elements.');
+            return;
+        }
+
         function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.classList.remove('active');
@@ -80,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initialize both sliders
     initializeSlider('.slide', '.nav-button', '.next-button', '.prev-button');
     initializeSlider('.slide-two', '.nav-button-two', '.next-button-two', '.prev-button-two');
-})
+});
 document.addEventListener("DOMContentLoaded", function() {
     let content = document.getElementById("wrapper");
 

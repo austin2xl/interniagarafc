@@ -197,6 +197,60 @@ label{
     border: 1px solid red;
 }
 
+/*cookies box*/
+.cookies-card {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: #24242479;
+    padding: 1.5em;
+    z-index: 1;
+    display: none;
+}
+
+.cookies-card * {
+    color: #fff;
+}
+
+.title {
+    font-size: 1em;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.5em;
+}
+
+.info {
+    line-height: 1.4em;
+    letter-spacing: 0.4px;
+    margin-bottom: 2em;
+    font-size: 0.8em;
+}
+
+.cta {
+    border: none;
+    outline: none;
+    padding: 0.6em 1.3em;
+    background-color: black;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.cta:hover {
+    background-color: #0C018C;
+    color: #fff;
+    border: solid 1px #0C018C ;
+}
+.cookies-card a {
+    color: #bbb;
+    margin-left: 1em;
+    border-bottom: none;
+}
+.cookies-card a:hover {
+    color: #0C018C;
+}
 
 /*changeing pictures*/
 .slider-container {
@@ -296,6 +350,26 @@ label{
         font-size: 1.5em;
        
     }
+    .cta {
+        font-size: 1.2em;
+        padding: 0.8em 1.5em;
+    }
+    .title {
+        font-size: 1.2em;
+        letter-spacing: 0.6px;
+    }
+    
+    .info {
+        line-height: 1.6em;
+        font-size: 1em;
+    }
+    .cookies-card {
+        
+        width: 350px;
+        background-color: #242424;
+        padding: 1.5em;
+    }
+    
 }
 
 @media screen and (min-width: 1024px){
