@@ -11,7 +11,7 @@ body{
    
 }
 body p{
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 600;
 }
 body, html {
@@ -24,7 +24,7 @@ main b{
     color: #73a5e7cc; 
 }
 main li{
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 600;
 }
 
@@ -51,10 +51,11 @@ h3{
     font-size: 1.5em;
 }
 
+/*footer*/
 footer{
     color: #fff;
     background: #0C018C;
-    margin-top:  200px;
+    margin-top:  140px;
 	padding: 35px;
     font-weight: 600;
 	text-align: center;
@@ -63,6 +64,8 @@ footer{
 footer small{
     font-size: 11px;
 }
+
+
 div img{
     padding-right: 250px;
 }
@@ -110,6 +113,7 @@ div img{
 .gallery-banner{
     background-image: linear-gradient(to bottom, #ffffff8e, #0e1e42d8) ,url(Images/HomePage/Gallery.jpg);   
 }
+
 /*form*/
 .form{
     display: grid;
@@ -173,6 +177,27 @@ label, ::placeholder{font-size: 1.2em;}
 label{
     margin-left: 10px;
 }
+#formResult {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.success {
+    color: green;
+    background-color: #e6ffed;
+    border: 1px solid green;
+}
+
+.error {
+    color: red;
+    background-color: #ffe6e6;
+    border: 1px solid red;
+}
+
+
 /*changeing pictures*/
 .slider-container {
     position: relative;
@@ -213,7 +238,7 @@ label{
     justify-content: center;
     align-items: center;
 }
-
+/*nav buttons for slides*/
 .nav-button, .nav-button-two {
     width: 12px;
     height: 12px;
@@ -224,7 +249,6 @@ label{
     cursor: pointer;
     transition: opacity 0.3s;
 }
-
 .nav-button.active,.nav-button-two.active {
     opacity: 1;
     background-color: #0C018C;
@@ -242,7 +266,6 @@ label{
     border-radius: 50%;
     z-index: 10;
 }
-
 .prev-button,.prev-button-two {
     left: 10px;
 }
@@ -255,6 +278,8 @@ label{
     background-color: rgba(0, 0, 0, 0.356);
     color: #0C018C;
 }
+
+/*different screens*/
 @media screen and (min-width: 768px){  
     .slider-container {
         height: auto;
@@ -262,6 +287,14 @@ label{
     }
     footer small{
         font-size: 13px;
+    }
+    body p{
+        font-size: 1.5em;
+        
+    }
+    main li{
+        font-size: 1.5em;
+       
     }
 }
 

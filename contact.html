@@ -57,7 +57,8 @@
                 <h2>Get in Touch with Inter Niagara FC</h2>
                 <p>We’re here to help! Whether you have questions, want to join the club, or need more information about our events, feel free to reach out to us.</p>
             </article>
-            <form  action="https://webdevbasics.net/scripts/demo.php" method="post">
+            <form onsubmit="goToHomePage(event)"  action="https://api.web3forms.com/submit" method="post">
+                <input type="hidden" name="access_key" value="62d1fcd7-833a-4fd1-adb9-bfd7089035d1">
                 <fieldset>
                 <legend>Information</legend>
                 <div class="form">
@@ -66,12 +67,12 @@
                 <input type="text" name="fName" id="fName" placeholder="Full name" required>
                 </div>
                 <div>
-                <label for="lName">Phone</label>
-                <input type="text" name="lName" id="phone" placeholder="123 456 7890" >
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" placeholder="123 456 7890" >
                 </div>
                 <div>
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="interniagara@gmail.com" required>
+                <input type="email" id="email" name="email" placeholder="interniagara@gmail.com">
                 </div>
                 <div>           
                 <label for="message">Message</label>           
@@ -81,12 +82,65 @@
                 </fieldset>
                 <button type="submit">Submit</button>
             </form>
+            <!-- Result display area -->
+            <div id="formResult" style="display:none;"></div>
     
         </main>
     </div>
 
 
     <!--content -->
-    <footer><small>©Copyright INTER NIAGARA FC. All rights reserved</small><br><b>Unity Through Soccer<br>info@interniagarafc.com | Follow us on social media </b></footer>    <script src="niagara.js"></script>
+    <footer><small>©Copyright INTER NIAGARA FC. All rights reserved<br><b>Unity Through Soccer<br><img src="Images/icons/email-icon.png" alt="email-icon" style="width:20px; vertical-align:middle; margin-right:5px; margin-bottom: 4px;">interniagara2@gmail.com | <a href="https://www.instagram.com" target="_blank">
+        <img src="Images/icons/instagram-icon.png" alt="Instagram Icon" style="width:17px; vertical-align:middle; margin-left:5px; margin-bottom: 3px;">
+    </a>
+    <a href="https://www.youtube.com" target="_blank">
+        <img src="Images/icons/youtube-icon.png" alt="YouTube Icon" style="width:20px; vertical-align:middle; margin-left:5px; margin-bottom: 3px;">
+    </a></small></footer> 
+    <script>
+   function goToHomePage(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Retrieve form data
+    var formData = new FormData(event.target);
+
+    // Send the form data using AJAX
+    fetch(event.target.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json()) // Parse the JSON response
+    .then(data => {
+        var formResult = document.getElementById('formResult');
+        formResult.style.display = 'block'; // Make sure the result div is visible
+
+        if (data.success) {
+            // Handle the success response
+            console.log('Form successfully submitted:', data);
+            formResult.textContent = "Thank you for reaching us.";
+            formResult.className = 'success'; // Apply success styling
+            
+            // Reset the form after successful submission
+            event.target.reset();
+        } else {
+            // Handle any errors in the response
+            console.error('Error in response:', data);
+            formResult.textContent = "Sorry, the form could not be sent.";
+            formResult.className = 'error'; // Apply error styling
+        }
+    })
+    .catch(error => {
+        // Handle network errors
+        console.error('Error submitting the form:', error);
+        var formResult = document.getElementById('formResult');
+        formResult.style.display = 'block';
+        formResult.textContent = "Sorry, the form could not be sent.";
+        formResult.className = 'error'; // Apply error styling
+    });
+}
+
+     
+    </script>
+    <script src="niagara.js"></script>
 </body>
 </html>
