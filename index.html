@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+Display:wght@100..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ibarra+Real+Nova:wght@400..700&family=Noto+Serif+Display:wght@100..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ibarra+Real+Nova:wght@400..700&family=Josefin+Sans:wght@100..700&family=Noto+Serif+Display:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ibarra+Real+Nova:wght@400..700&family=Josefin+Sans:wght@100..700&family=Noto+Serif+Display:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header> 
@@ -80,6 +81,42 @@
         <button class="cta">Accept all</button>
         <a href="#" class="settings">Cookies Settings</a>
     </div>
+    <!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal" class="cookie-settings-modal">
+    <div class="cookie-settings-content">
+        <span class="close-settings">&times;</span>
+        <h2>Cookie Settings</h2>
+        <p>Manage your cookie preferences:</p>
+        
+        <form id="cookie-settings-form">
+            <label>
+                <input type="checkbox" id="necessary-cookies" checked disabled>
+                Necessary Cookies (Required)
+            </label><br>
+            
+            <label>
+                <input type="checkbox" id="analytics-cookies">
+                Analytics Cookies
+            </label><br>
+            
+            <label>
+                <input type="checkbox" id="marketing-cookies">
+                Marketing Cookies
+            </label><br>
+            
+            <label>
+                <input type="checkbox" id="preferences-cookies">
+                Preferences Cookies
+            </label><br>
+            
+            <div class="settings-buttons">
+                <button type="button" class="save-settings">Save Preferences</button>
+                <button type="button" class="cancel-settings">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 
     <!--content -->
     <footer><small>©Copyright INTER NIAGARA FC. All rights reserved<br><b>Unity Through Soccer<br><img src="Images/icons/email-icon.png" alt="email-icon" style="width:20px; vertical-align:middle; margin-right:5px; margin-bottom: 4px;">interniagara2@gmail.com | <a href="https://www.instagram.com" target="_blank">

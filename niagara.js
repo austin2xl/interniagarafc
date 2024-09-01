@@ -112,3 +112,49 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const settingsModal = document.getElementById("cookie-settings-modal");
+    const closeSettingsBtn = document.querySelector(".close-settings");
+    const saveSettingsBtn = document.querySelector(".save-settings");
+    const cancelSettingsBtn = document.querySelector(".cancel-settings");
+    const settingsLink = document.querySelector(".settings");
+
+    // Open modal when clicking the settings link
+    settingsLink.addEventListener("click", function(e) {
+        e.preventDefault();
+        settingsModal.style.display = "flex";
+    });
+
+    // Close modal when clicking the close button
+    closeSettingsBtn.addEventListener("click", function() {
+        settingsModal.style.display = "none";
+    });
+
+    // Save preferences and close modal
+    saveSettingsBtn.addEventListener("click", function() {
+        const analytics = document.getElementById("analytics-cookies").checked;
+        const marketing = document.getElementById("marketing-cookies").checked;
+        const preferences = document.getElementById("preferences-cookies").checked;
+
+        setCookie("analytics", analytics, 30);
+        setCookie("marketing", marketing, 30);
+        setCookie("preferences", preferences, 30);
+
+        settingsModal.style.display = "none";
+    });
+
+    // Cancel and close modal without saving
+    cancelSettingsBtn.addEventListener("click", function() {
+        settingsModal.style.display = "none";
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const settingsModal = document.getElementById("cookie-settings-modal");
+    const settingsLink = document.querySelector(".settings");
+
+    // Open modal when clicking the settings link
+    settingsLink.addEventListener("click", function(e) {
+        e.preventDefault();
+        settingsModal.style.display = "flex";
+    });
+});
