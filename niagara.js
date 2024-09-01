@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Set the active link on page load
     setActiveLink()
 })
+
 //sliding effects for pictures
 document.addEventListener("DOMContentLoaded", function() {
     function initializeSlider(sliderClass, navButtonClass, nextButtonClass, prevButtonClass) {
@@ -83,10 +84,12 @@ document.addEventListener("DOMContentLoaded", function() {
         showSlide(currentSlide);
     }
 
-    // Initialize both sliders
+    // Initialize the sliders
     initializeSlider('.slide', '.nav-button', '.next-button', '.prev-button');
     initializeSlider('.slide-two', '.nav-button-two', '.next-button-two', '.prev-button-two');
+    initializeSlider('.slide-three', '.nav-button-three', '.next-button-three', '.prev-button-three');
 });
+
 document.addEventListener("DOMContentLoaded", function() {
     let content = document.getElementById("wrapper");
 
@@ -130,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
         settingsModal.style.display = "none";
     });
 
-    // Save preferences and close modal
+    // Save preferences and redirect to homepage
     saveSettingsBtn.addEventListener("click", function() {
         const analytics = document.getElementById("analytics-cookies").checked;
         const marketing = document.getElementById("marketing-cookies").checked;
@@ -140,21 +143,13 @@ document.addEventListener("DOMContentLoaded", function() {
         setCookie("marketing", marketing, 30);
         setCookie("preferences", preferences, 30);
 
-        settingsModal.style.display = "none";
+        // Redirect to homepage after saving
+        window.location.href = "index.html";
     });
 
-    // Cancel and close modal without saving
+    // Cancel and redirect to homepage without saving
     cancelSettingsBtn.addEventListener("click", function() {
-        settingsModal.style.display = "none";
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const settingsModal = document.getElementById("cookie-settings-modal");
-    const settingsLink = document.querySelector(".settings");
-
-    // Open modal when clicking the settings link
-    settingsLink.addEventListener("click", function(e) {
-        e.preventDefault();
-        settingsModal.style.display = "flex";
+        // Redirect to homepage
+        window.location.href = "index.html";
     });
 });
