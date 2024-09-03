@@ -131,6 +131,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Close modal when clicking the close button
     closeSettingsBtn.addEventListener("click", function() {
         settingsModal.style.display = "none";
+        // Redirect to homepage after closing
+        window.location.href = "index.html";
     });
 
     // Save preferences and redirect to homepage

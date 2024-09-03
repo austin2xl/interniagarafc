@@ -202,9 +202,9 @@ label{
     position: fixed;
     bottom: 5px;
     right: 5px;
-    width: 200px;
+    width: 250px;
     border-radius: 5px;
-    background-color: #24242479;
+    background-color: #242424b9;
     padding: 1.5em;
     z-index: 1;
     display: none;
@@ -246,10 +246,11 @@ label{
 .cookies-card a {
     color: #bbb;
     margin-left: 1em;
+    font-size: 0.8em;
     border-bottom: none;
 }
 .cookies-card a:hover {
-    color: #0C018C;
+    color: #fff;
 }
 /* Cookie Settings Modal */
 .cookie-settings-modal {
